@@ -6,24 +6,37 @@ namespace Lab8_5RealityShowInheritanceComposition
 {
     class AboveDeckApplication : ContestantApplication
     {
-        private string Gender { get; set; }
-        private string NameofBoyfriendGirlfriend { get; set; }
-        private int YearsDating { get; set; }
 
-        public AboveDeckApplication(string Gender, string NameofBoyfriendGirlfriend, int YearsDating)
+        #region Properties
+
+        private int YearsBoatingExperience  { get; set; }
+        private string Nationality { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public AboveDeckApplication(int YearsBoatingExperience, string Nationality, 
+            string FirstName, string LastName, DateTime DateofBirth, string Address, string City, string State, 
+            string Zip, string PhoneNumber, string Email) : base(FirstName, LastName, DateofBirth, Address, City, State, Zip, PhoneNumber, Email)
         {
 
-            this.Gender = Gender;
-            this.NameofBoyfriendGirlfriend = NameofBoyfriendGirlfriend;
-            this.YearsDating = YearsDating;
+            this.YearsBoatingExperience = YearsBoatingExperience;
+            this.Nationality = Nationality;
 
         }
+
+        #endregion
+
+        #region Methods
 
         public override void Accept()
         {
-
-            Console.WriteLine($"{FirstName} {LastName}, You've been accepted to 'Above Deck'.");
-
+            base.Accept();
+            Console.WriteLine($"{FirstName} {LastName}, You've been accepted to 'Above Deck'. (*Accept() From Child Class - AboveDeckApplication)");
         }
+
+        #endregion
+
     }
 }

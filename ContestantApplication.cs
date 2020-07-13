@@ -5,14 +5,14 @@ using System.Text;
 namespace Lab8_5RealityShowInheritanceComposition
 {
 
-    public class ContestantApplication 
+    public class ContestantApplication
     {
 
         #region Properties
 
         protected string FirstName { get; set; }
         protected string LastName { get; set; }
-        protected string DateofBirth { get; set; }
+        protected DateTime DateofBirth { get; set; }
         protected string Address { get; set; }
         protected string City { get; set; }
         protected string State { get; set; }
@@ -24,6 +24,22 @@ namespace Lab8_5RealityShowInheritanceComposition
 
         #endregion
 
+        #region Constructors
+        public ContestantApplication(string FirstName, string LastName, DateTime DateofBirth, 
+            string Address, string City, string State, string Zip, string PhoneNumber, string Email) 
+        {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.DateofBirth = DateofBirth;
+            this.Address = Address;
+            this.City = City;
+            this.State = State;
+            this.Zip = Zip;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+        } 
+        #endregion
+
         #region Methods
 
         public void Submit()
@@ -32,10 +48,10 @@ namespace Lab8_5RealityShowInheritanceComposition
             ApplicationSubmitted = true;
         }
 
-        // Virtual Methods like Accept can be overwritten by any class that inherits this class as a base class.
+        // Virtual Methods like Accept can be overridden by any class that inherits this class as a base class.
         public virtual void Accept()
         {
-            Console.WriteLine($"The application for {FirstName} {LastName} has been accepted.");
+            Console.WriteLine($"The application for {FirstName} {LastName} has been accepted. (*Accept() From Base Class - ContestantApplication)");
             ApplicationAccepted = true;
         }
 
