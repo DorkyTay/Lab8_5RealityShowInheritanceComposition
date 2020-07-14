@@ -34,6 +34,14 @@ namespace Lab8_5RealityShowInheritanceComposition
             deckApplication.Submit();
             deckApplication.Accept();
 
+            // The best Reality TV Show of the Decade - Hackers!
+            HackersApplication hackersApplication = new HackersApplication(5, "AlreadyGone", 25, "Bill", "Wright", Convert.ToDateTime("7/12/2000"),
+                                                                            "123 Hacker Lane", "Charlotte", "North Carolina", "28123",
+                                                                            "704-547-1234", "agimout@gmail.com");
+            hackersApplication.Submit();
+            hackersApplication.Accept();
+            hackersApplication.Comment(); // new wasn't in the courseware...added by th 07142020
+
         }
     }
 }
